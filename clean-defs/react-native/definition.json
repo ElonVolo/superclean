@@ -1,0 +1,35 @@
+{
+	"name": "react-native",
+	"steps": [
+		{
+			"step_id": "clean_node_deps",
+			"message": "Deleting node dependencies",
+			"type": "dependency",
+			"definition": "node"
+		},
+		{
+			"step_id": "clean_xcode_deps",
+			"message": "Deleting xcode dependencies",
+			"type": "dependency",
+			"definition": "xcode"
+		},
+		{
+			"step_id": "delete_ios_dir",
+			"message": "Deleting ios directory",
+			"type": "delete",
+			"path": "ios"
+		},
+		{
+			"step_id": "delete_android_dir",
+			"message": "Deleting android directory",
+			"type": "delete",
+			"path": "android"
+		},
+		{
+			"step_id": "delete_dot_expo_dir",
+			"message": "Deleting .expo directory",
+			"type": "delete",
+			"path": ".expo"
+		}
+	]
+}

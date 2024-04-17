@@ -1,0 +1,59 @@
+{
+	"name": "node",
+	"steps": [
+		{
+			"step_id": "watchman_watch-del-all",
+			"message": "Running watchman watch-del-all",
+			"type": "shell",
+			"command": {
+				"name": "watchman",
+				"args": [
+					"watch-del-all"
+				]
+			}
+		},
+		{
+			"step_id": "npm_cache_clean",
+			"message": "Running npm cache clean",
+			"type": "shell",
+			"command": {
+				"name": "npm",
+				"args": [
+					"cache",
+					"clean",
+					"--force"
+				]
+			}
+		},
+		{
+			"step_id": "yarn_cache_clean",
+			"message": "Running yarn cache clean",
+			"type": "shell",
+			"command": {
+				"name": "yarn",
+				"args": [
+					"cache",
+					"clean"
+				]
+			}
+		},
+		{
+			"step_id": "delete_yarn_lock",
+			"message": "Deleting yarn.lock",
+			"type": "delete",
+			"path": "yarn.lock"
+		},
+		{
+			"step_id": "delete_package_lock_json",
+			"message": "Deleting package-lock.json",
+			"type": "delete",
+			"path": "package-lock.json"
+		},
+		{
+			"step_id": "delete_node_modules",
+			"message": "Deleting node modules",
+			"type": "delete",
+			"path": "node_modules"
+		}
+	]
+}

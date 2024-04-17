@@ -1,0 +1,41 @@
+{
+	"name": "xcode",
+	"steps": [
+		{
+			"step_id": "stop_iphone_simulator",
+			"message": "iOS Simulator: Erase All Content and Settings",
+			"type": "shell",
+			"command": {
+				"name": "killall",
+				"args": [
+					"Simulator"
+				]
+			}
+		},
+		{
+			"step_id": "erase_all_content_and_settings",
+			"message": "Erasing iPhone Simulator Contents and Settings",
+			"type": "shell",
+			"command": {
+				"name": "xcrun",
+				"args": [
+					"simctl",
+					"erase",
+					"all"
+				]
+			}
+		},
+		{
+			"step_id": "delete_derived_data",
+			"message": "Deleting DerivedData",
+			"type": "delete",
+			"path": "~/Library/Developer/Xcode/DerivedData"
+		},
+		{
+			"step_id": "delete_com_apple_dt_xcode",
+			"message": "Deleting com.apple.dt.Xcode",
+			"type": "delete",
+			"path": "~/Library/Developer/CoreSimulator/Caches"
+		}
+	]
+}
