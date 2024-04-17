@@ -14,7 +14,6 @@
     "moduleResolution": "node",
     "noImplicitAny": false,
     "noImplicitThis": true,
-    "noUnusedLocals": true,
     "sourceMap": true,
     "inlineSourceMap": true,
     "outDir": "build",
@@ -23,6 +22,6 @@
     "declaration": true,
     "declarationDir": "build/types"
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "src/utilities/testing-toolbox.ts"],
   "exclude": ["node_modules"]
 }
