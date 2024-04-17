@@ -3,9 +3,8 @@ import { GluegunCommand } from 'gluegun'
 const command: GluegunCommand = {
   name: 'superclean',
   run: async (toolbox) => {
-    const { print } = toolbox
-
-    print.info('Welcome to your CLI')
+    const { print, clean, parameters } = toolbox
+    toolbox.cleaning.clean(parameters.first)
   },
 }
 
