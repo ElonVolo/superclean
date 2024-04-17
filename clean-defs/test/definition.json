@@ -1,0 +1,23 @@
+{
+	"name": "test",
+	"steps": [
+		{
+			"step_id": "list-dir",
+			"message": "listing the directory",
+			"type": "shell",
+			"command": {
+				"name": "ls",
+				"args": [
+					"-l",
+					"-t"
+				]
+			}
+		},
+		{
+			"step_id": "test-delete-testfile",
+			"message": "Deleting abdefg",
+			"type": "delete",
+			"path": "abcdefg"
+		}
+	]
+}
