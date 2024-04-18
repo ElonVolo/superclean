@@ -1,6 +1,6 @@
 {
   "name": "superclean",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "superclean CLI",
   "private": true,
   "types": "build/types/types.d.ts",
