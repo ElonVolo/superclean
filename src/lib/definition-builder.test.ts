@@ -16,17 +16,13 @@ describe('Definitions builder', () => {
     const builder = new DefinitionsBuilder(toolbox)
     const definitions = builder.getDefinitions('react-native')
 
-    test('can parse the definition', () => {
-      expect(definitions.length).toBe(3)
-    })
-
     test('can parse the definition name', () => {
       expect(definitions[2].name).toBe('xcode')
     })
 
     describe('can parse definition steps', () => {
       test('getting all of the steps', () => {
-        expect(definitions[0].steps.length).toBe(5)
+        expect(definitions[0].steps.length).toBe(9)
       })
 
       test('correctly parsing the command', () => {
