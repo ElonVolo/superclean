@@ -32,6 +32,19 @@ describe('Definitions builder', () => {
       test('correctly parsing the command', () => {
         expect(definitions[1].steps[0].command.name).toBe('watchman')
       })
+
+      // TODO: we need to make sure we can parse the following:
+      // "command": {
+			// 	"name": "pod",
+			// 	"args": [
+			// 		"cache",
+			// 		"clean",
+			// 		"--all"
+			// 	]
+			// }
+      // test('correctly parses commands with argument arrays', () => {
+        
+      // })
     })
   })
 })
