@@ -2,7 +2,6 @@
   "name": "superclean",
   "version": "1.0.0",
   "description": "superclean CLI",
-  "private": true,
   "types": "build/types/types.d.ts",
   "bin": {
     "superclean": "bin/superclean"
