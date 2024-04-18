@@ -1,0 +1,30 @@
+{
+	"name": "cocoapods",
+	"steps": [
+		{
+			"step_id": "delete_home_dir_cocoapods_cache",
+			"message": "Deleting ~/.cocoapods cache",
+			"type": "delete",
+			"path": "~/.cocoapods"
+		},
+		{
+			"step_id": "delete_user_library_dir_cocoapods_cache",
+			"message": "Deleting ~/Library/Caches/CocoaPods",
+			"type": "delete",
+			"path": "~/Library/Caches/CocoaPods"
+		},
+		{
+			"pod_id": "run_pod_cache_clean",
+			"message": "Running pod cache clean",
+			"type": "shell",
+			"command": {
+				"name": "pod",
+				"args": [
+					"cache",
+					"clean",
+					"--all"
+				]
+			}
+		}
+	]
+}

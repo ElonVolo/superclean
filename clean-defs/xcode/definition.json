@@ -13,6 +13,17 @@
 			}
 		},
 		{
+			"step_id": "killall_xcode",
+			"message": "Stopping Xcode",
+			"type": "shell",
+			"command": {
+				"name": "killall",
+				"args": [
+					"Xcode"
+				]
+			}
+		},
+		{
 			"step_id": "erase_all_content_and_settings",
 			"message": "Erasing iPhone Simulator Contents and Settings",
 			"type": "shell",
@@ -23,6 +34,33 @@
 					"erase",
 					"all"
 				]
+			}
+		},
+		{
+			"step_id": "xcrun_k",
+			"message": "Running xcrun -k",
+			"type": "shell",
+			"command": {
+				"name": "xcrun",
+				"args": [
+					"-k"
+				]
+			}
+		},
+		{
+			"step_id": "delete_user_llvm_clang_module_cache",
+			"message": "Deleting $(getconf DARWIN_USER_CACHE_DIR)/org.llvm.clang/ModuleCache",
+			"type": "shell",
+			"command": {
+				"name": "rm -rf $(getconf DARWIN_USER_CACHE_DIR)/org.llvm.clang/ModuleCache"
+			}
+		},
+		{
+			"step_id": "delete_user_whoami_llvm_clang_module_cache",
+			"message": "Deleting $(getconf DARWIN_USER_CACHE_DIR)/org.llvm.clang.$(whoami)/ModuleCache",
+			"type": "shell",
+			"command": {
+				"name": "rm -rf $(getconf DARWIN_USER_CACHE_DIR)/org.llvm.clang.$(whoami)/ModuleCache"
 			}
 		},
 		{
