@@ -1,0 +1,23 @@
+{
+	"name": "android",
+	"steps": [
+		{
+			"step_id": "delete_home_dir_gradle_caches",
+			"message": "Deleting ~/.gradle caches",
+			"type": "delete",
+			"path": "~/.gradle/caches"
+		},
+    {
+      "step_id": "delete_user_library_android_studio_caches",
+      "message": "Deleting ~/Library/Caches/Google/AndroidStudio*",
+      "type": "shell",
+      "command": {
+        "name": "rm",
+        "args": [
+          "-rf",
+          "~/Library/Caches/Google/AndroidStudio*"
+        ]
+      }
+    }
+	]
+}
