@@ -14,6 +14,18 @@
 			"definition": "xcode"
 		},
 		{
+			"step_id": "clean_android_deps",
+			"message": "Deleting android dependencies",
+			"type": "dependency",
+			"definition": "android"
+		},
+		{
+			"step_id": "clean_cocoapods_deps",
+			"message": "Deleting cocoapods caches",
+			"type": "dependency",
+			"definition": "cocoapods"
+		},
+		{
 			"step_id": "delete_ios_dir",
 			"message": "Deleting ios directory",
 			"type": "delete",
@@ -30,6 +42,22 @@
 			"message": "Deleting .expo directory",
 			"type": "delete",
 			"path": ".expo"
+		},
+		{
+			"step_id": "delete_react_tmpdir_files",
+			"message": "Deleting react temp files",
+			"command": "rm",
+			"args": [
+				"$TMPDIR/react-*"
+			]
+		},
+		{
+			"step_id": "delete_metro_tmpdir_files",
+			"message": "Deleting metro temp files",
+			"command": "rm",
+			"args": [
+				"$TMPDIR/metro-*"
+			]
 		}
 	]
 }
