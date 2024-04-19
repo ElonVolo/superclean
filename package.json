@@ -23,7 +23,11 @@
     "LICENSE",
     "readme.md",
     "docs",
-    "bin"
+    "bin",
+    "clean-defs",
+    "src",
+    "tsconfig.json",
+    "package.json"
   ],
   "license": "MIT",
   "dependencies": {
