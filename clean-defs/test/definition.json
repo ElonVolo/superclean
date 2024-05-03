@@ -2,22 +2,44 @@
 	"name": "test",
 	"steps": [
 		{
-			"step_id": "list-dir",
-			"message": "listing the directory",
-			"type": "shell",
-			"command": {
-				"name": "ls",
-				"args": [
-					"-l",
-					"-t"
-				]
-			}
-		},
-		{
-			"step_id": "test-delete-testfile",
-			"message": "Deleting abdefg",
+			"step_id": "test-delete-node-modules",
+			"message": "Testing deleting node_modules directory",
 			"type": "delete",
-			"path": "abcdefg"
-		}
+			"path": "node_modules"
+		},
+    {
+			"step_id": "test-delete-platform-darwin",
+			"message": "Test deleting darwin-specific file",
+			"type": "delete",
+			"path": "darwin-specific-file.ts",
+      "platforms": ["darwin"]
+    },
+    {
+      "step_id": "test-delete-platform-linux",
+      "message": "Test deleting linux-specific file",
+      "type": "delete",
+      "path": "linux-specific-file.ts",
+      "platforms": ["linux"]
+    },
+    {
+      "step_id": "run-simple-command",
+      "message": "Testing running a simple command",
+      "type": "shell",
+      "command": {
+        "name": "ls -lt"
+      }
+    },
+    {
+      "step_id": "run-simple-command",
+      "message": "Testing running a command with multiple arguments",
+      "type": "shell",
+      "command": {
+        "name": "ls",
+        "args": [
+          "-l",
+          "-t"
+        ]
+      }
+    }
 	]
 }
