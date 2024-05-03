@@ -46,18 +46,24 @@
 		{
 			"step_id": "delete_react_tmpdir_files",
 			"message": "Deleting react temp files",
-			"command": "rm",
-			"args": [
-				"$TMPDIR/react-*"
-			]
+			"type": "shell",
+			"command": {
+				"name": "rm",
+				"args": [
+					"$TMPDIR/react-*"
+				]
+			}
 		},
 		{
 			"step_id": "delete_metro_tmpdir_files",
 			"message": "Deleting metro temp files",
-			"command": "rm",
-			"args": [
-				"$TMPDIR/metro-*"
-			]
+			"type": "shell",
+			"command": {
+				"name": "rm",
+				"args": [
+					"$TMPDIR/metro-*"
+				]
+			}
 		}
 	]
 }

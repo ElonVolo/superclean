@@ -3,7 +3,6 @@ import { TestingToolbox } from '../utilities/testing-toolbox'
 import exp = require('constants')
 
 describe('Definitions builder', () => {
-
   test('should be able to obtain a lookup table mapping name-key of definition to file path', () => {
     const toolbox = new TestingToolbox()
     const builder = new DefinitionsBuilder(toolbox)
@@ -39,7 +38,7 @@ describe('Definitions builder', () => {
 			// 	]
 			// }
       // test('correctly parses commands with argument arrays', () => {
-        
+
       // })
     })
   })
