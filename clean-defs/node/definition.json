@@ -13,6 +13,55 @@
 			}
 		},
 		{
+			"step_id": "watchman_delete_user_state",
+			"message": "Deleting watchman <USER>-state",
+			"type": "shell",
+			"command": {
+				"name": "rm",
+				"args": [
+					"-rf",
+					"/usr/local/var/run/watchman"
+				]
+			}
+		},
+		{
+			"step_id": "delete_node_gyp_homedir",
+			"message": "Deleting ~/.node-gyp",
+			"type": "delete",
+			"path": "~/.node-gyp",
+			"platforms": [
+				"darwin",
+				"linux"
+			]
+		},
+		{
+			"step_id": "delete_node_gyp_homedir_linux",
+			"message": "Deleting ~/.cache/node-gyp",
+			"type": "delete",
+			"path": "~/.cache/node-gyp",
+			"platforms": [
+				"linux"
+			]
+		},
+		{
+			"step_id": "delete_node_gyp_cache_darwin",
+			"message": "Deleting ~/Library/Caches/node-gyp",
+			"type": "delete",
+			"path": "~/Library/Caches/node-gyp",
+			"platforms": [
+				"darwin"
+			]
+		},
+		{
+			"step_id": "delete_node_gyp_cache_linux",
+			"message": "Deleting ~/.cache/node-gyp",
+			"type": "delete",
+			"path": "~/.cache/node-gyp",
+			"platforms": [
+				"linux"
+			]
+		},
+		{
 			"step_id": "npm_cache_clean",
 			"message": "Running npm cache clean",
 			"type": "shell",
