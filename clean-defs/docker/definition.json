@@ -1,0 +1,220 @@
+{
+	"name": "docker",
+	"steps": [
+    {
+			"step_id": "run_docker_system_prune",
+			"message": "Running docker system prune ",
+			"type": "shell",
+			"command": {
+				"name": "docker",
+				"args": [
+					"system",
+					"prune"
+				]
+			}
+		},
+    {
+			"step_id": "remove_all_docker_images",
+			"message": "Removing all docker images",
+			"type": "shell",
+			"command": {
+				"name": "docker",
+				"args": [
+					"rmi",
+					"-f",
+          "$(docker images -a -q)"
+				]
+			}
+		},
+    {
+			"step_id": "remove_all_docker_containers",
+			"message": "Removing all docker containers",
+			"type": "shell",
+			"command": {
+				"name": "docker",
+				"args": [
+					"rm",
+					"-f",
+          "$(docker ps -a -q)"
+				]
+			}
+		},
+    {
+			"step_id": "remove_all_docker_volumes",
+			"message": "Removing all docker containers",
+			"type": "shell",
+			"command": {
+				"name": "docker",
+				"args": [
+					"volume",
+					"rm",
+          "$(docker volume ls -q) "
+				]
+			}
+		},
+    {
+			"step_id": "delete_mac_library_application_support_docker_desktop",
+			"message": "Deleting ~/Library/Application\\ Support/Docker\\ Desktop",
+			"type": "delete",
+			"path": "~/Library/Application\\ Support/Docker\\ Desktop",
+			"platforms": [
+				"darwin"
+			]
+		},
+		{
+			"step_id": "delete_mac_library_containers_com_docker_docker",
+			"message": "Deleting ~/Library/Containers/com.docker.docker",
+			"type": "delete",
+			"path": "~/Library/Containers/com.docker.docker",
+			"platforms": [
+				"darwin"
+			]
+		},
+    {
+			"step_id": "delete_docker_home_dot_dir",
+			"message": "Deleting ~/.docker",
+			"type": "delete",
+			"path": "~/.docker",
+			"platforms": [
+				"darwin",
+        "linux"
+			]
+		},
+    {
+			"step_id": "delete_mac_docker_library_group_containers",
+			"message": "Deleting ~/Library/Group\\ Containers/group.com.docker",
+			"type": "delete",
+			"path": "~/Library/Group\\ Containers/group.com.docker",
+			"platforms": [
+				"darwin"
+			]
+		},
+    {
+			"step_id": "delete_mac_docker_library_preferences_docker_plist",
+			"message": "Deleting ~/Library/Preferences/com.docker.docker.plist",
+			"type": "delete",
+			"path": "~/Library/Preferences/com.docker.docker.plist",
+			"platforms": [
+				"darwin"
+			]
+		},
+    {
+			"step_id": "delete_mac_docker_library_saved_application_state_electron",
+			"message": "Deleting ~/Library/Saved\\ Application\\ State/com.electron.docker-frontend.savedState",
+			"type": "delete",
+			"path": "~/Library/Saved\\ Application\\ State/com.electron.docker-frontend.savedState",
+			"platforms": [
+				"darwin"
+			]
+		},
+
+    {
+			"step_id": "delete_mac_docker_library_logs_docker_desktop",
+			"message": "Deleting ~/Library/Logs/Docker\\ Desktop",
+			"type": "delete",
+			"path": "~/Library/Logs/Docker\\ Desktop",
+			"platforms": [
+				"darwin"
+			]
+		},
+    {
+			"step_id": "delete_mac_usr_local_bin_docker",
+			"message": "Deleting /usr/local/bin/docker",
+			"type": "delete",
+			"path": "/usr/local/bin/docker",
+			"platforms": [
+				"darwin"
+			],
+      "admin": true
+		},
+    {
+			"step_id": "delete_mac_usr_local_lib_docker_compose",
+			"message": "Deleting /usr/local/lib/docker-compose",
+			"type": "delete",
+			"path": "/usr/local/lib/docker-compose",
+			"platforms": [
+				"darwin"
+			],
+      "admin": true
+		},
+    {
+			"step_id": "delete_mac_usr_local_lib_docker_compose_v1",
+			"message": "Deleting /usr/local/lib/docker-compose-v1",
+			"type": "delete",
+			"path": "/usr/local/lib/docker",
+			"platforms": [
+				"darwin"
+			],
+      "admin": true
+		},
+    {
+			"step_id": "delete_mac_usr_local_bin_docker_machine",
+			"message": "Deleting /usr/local/bin/docker-machine",
+			"type": "delete",
+			"path": "/usr/local/bin/docker",
+			"platforms": [
+				"darwin"
+			],
+      "admin": true
+		},
+    {
+			"step_id": "delete_mac_usr_local_bin_docker_credential_desktop",
+			"message": "Deleting /usr/local/bin/docker-credential-desktop",
+			"type": "delete",
+			"path": "/usr/local/bin/docker-credential-desktop",
+			"platforms": [
+				"darwin"
+			],
+      "admin": true
+		},
+    {
+			"step_id": "delete_mac_usr_local_lib_docker",
+			"message": "Deleting /usr/local/lib/docker",
+			"type": "delete",
+			"path": "/usr/local/lib/docker",
+			"platforms": [
+				"darwin"
+			],
+      "admin": true
+		},
+    {
+			"step_id": "delete_mac_usr_local_bin_hub-tool",
+			"message": "Deleting /usr/local/bin/hub-tool",
+			"type": "delete",
+			"path": "/usr/local/bin/docker",
+			"platforms": [
+				"darwin"
+			],
+      "admin": true
+		},
+    {
+			"step_id": "delete_mac_usr_local_bin_hyperkit",
+			"message": "Deleting /usr/local/bin/hyperkit",
+			"type": "delete",
+			"path": "/usr/local/bin/hyperkit",
+			"platforms": [
+				"darwin"
+			],
+      "admin": true
+		},
+    {
+			"step_id": "delete_mac_usr_local_bin_kubectl_docker",
+			"message": "Deleting /usr/local/bin/kubectl.docker",
+			"type": "delete",
+			"path": "/usr/local/bin/kubectl.docker",
+			"platforms": [
+				"darwin"
+			],
+      "admin": true
+		},
+    {
+			"step_id": "delete_mac_docker_library_caches_docker_desktop",
+			"message": "Deleting ~/Library/Caches/Docker\\ Desktop",
+			"type": "delete",
+			"path": " ~/Library/Caches/Docker\\ Desktop",
+			"platforms": [
+				"darwin"
+			]
+		}
+	]
+}
