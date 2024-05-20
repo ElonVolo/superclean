@@ -68,6 +68,34 @@ describe('clean extension', () => {
       })
     })
 
+    describe('with status', () => {
+      test('that does not have a delete flag set', () => {
+        jest.spyOn(testToolbox.filesystem, 'list').mockImplementation(() => {
+          return [
+            'node_modules',
+            'file_to_keep.ts'
+          ]
+        })
+
+        // @ts-ignore
+        let theClean = testToolbox.cleaning.clean('only-test')
+        expect(removeSpy).not.toHaveBeenCalledWith('node_modules')
+      })
+
+      test('that only actions with the only flag are run', () => {
+        jest.spyOn(testToolbox.filesystem, 'list').mockImplementation(() => {
+          return [
+            'node_modules',
+            'file_to_keep.ts'
+          ]
+        })
+
+        // @ts-ignore
+        let theClean = testToolbox.cleaning.clean('only-test')
+        expect(removeSpy).not.toHaveBeenCalledWith('node_modules')
+      })
+    })
+
     afterEach(() => {
       jest.clearAllMocks();
     })

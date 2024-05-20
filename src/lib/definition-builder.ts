@@ -112,7 +112,7 @@ class DefinitionsBuilder {
       // Remove the definition we're currently looking at
       definitionsQueue.shift()
     } while (definitionsQueue.length > 0);
-      
+
     return returnDefinitions
   }
 }
