@@ -1,7 +1,7 @@
 {
   "name": "superclean",
-  "version": "1.0.2",
-  "description": "superclean CLI",
+  "version": "1.0.3",
+  "description": "A one-stop cleaning utility for multiple frameworks and platforms",
   "types": "build/types/types.d.ts",
   "bin": {
     "superclean": "bin/superclean"
