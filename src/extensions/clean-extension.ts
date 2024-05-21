@@ -52,7 +52,7 @@ export default function attach(toolbox: GluegunToolbox) {
           filesystem.remove(step.path)
         } else {
           if (step.type === 'shell') {
-          //  print.info("* " + step.message)
+            print.info("* " + step.message)
             runCommand(step)
           }
         }
