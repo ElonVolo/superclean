@@ -4,6 +4,7 @@ superclean is a one-stop shopping project cleaner that supports multiple platfor
 
 It collates all those really good pieces of advice on cleaning projects that you search for in the dark corners of StackOverflow when your project stops running and you've ruled out everything else.
 
+
 ## Install
 
 $ ```npm install -g superclean```
@@ -17,21 +18,23 @@ example:
 superclean react-native
 ```
 
- 
-
 _project_type_ can be one of the following:
 
 | project_type | Description | notes |
 | ---- | ---- | ---- |
 | node | node.js projects |
 | react-native | React Native projects | mac-only
-| xcode | Xcode projects | mac-only (multi-coming)
+| xcode | Xcode projects | mac-only
 | android | Android projects | mac-only (win/linux coming)
 | cocoapods | Cleans cocoapods dependencies | mac-only |
 | homebrew | Cleans homebrew dependencies | mac-only |
 | docker | Docker Environment | Experimental, save your data, mac-only (win/linux coming) |
 
+
+## caveats
+
+superclean will delete most build artifacts in project's directory, as well as both local and global caches that the project relies on. When you use it, you will have to re-download all those dependencies and re-run commands to rebuild the project.
+
 # License
 
 MIT - see LICENSE
-
