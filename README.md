@@ -35,4 +35,3 @@ _project_type_ can be one of the following:
 
 MIT - see LICENSE
 
-g
