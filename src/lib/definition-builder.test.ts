@@ -7,16 +7,16 @@ describe('Definitions builder', () => {
     const toolbox = new TestingToolbox()
     const builder = new DefinitionsBuilder(toolbox)
     let lut = builder.getDefinitionsLookupTable()
-    expect(lut['node']).toEqual('clean-defs/node/definition.json')
+    expect(lut['test']).toEqual('clean-defs/test/definition.json')
   })
 
   describe('when building a definition', () => {
     const toolbox = new TestingToolbox()
     const builder = new DefinitionsBuilder(toolbox)
-    const definitions = builder.getDefinitions('react-native')
+    const definitions = builder.getDefinitions('test')
 
     test('can parse the definition name', () => {
-      expect(definitions[2].name).toBe('xcode')
+      expect(definitions[0].name).toBe('test')
     })
 
     describe('can parse definition steps', () => {
@@ -25,21 +25,24 @@ describe('Definitions builder', () => {
       })
 
       test('correctly parsing the command', () => {
-        expect(definitions[1].steps[0].command.name).toBe('watchman')
+        expect(definitions[0].steps[4].stepID).toEqual('run-simple-command')
+        expect(definitions[0].steps[4].message).toBe('Testing running a command with multiple arguments')
+        expect(definitions[0].steps[4].type).toBe('shell')
+        expect(definitions[0].steps[4].status).toBe('enabled')
+        expect(definitions[0].steps[4].command.name).toBe('ls')
+        expect(definitions[0].steps[4].command.args).toEqual(['-l', '-t'])
       })
-
-      // TODO: we need to make sure we can parse the following:
-      // "command": {
-			// 	"name": "pod",
-			// 	"args": [
-			// 		"cache",
-			// 		"clean",
-			// 		"--all"
-			// 	]
-			// }
-      // test('correctly parses commands with argument arrays', () => {
-
-      // })
     })
   })
+
+  describe('dependencies handling', () => {
+    const toolbox = new TestingToolbox()
+    const builder = new DefinitionsBuilder(toolbox)
+    const definitions = builder.getDefinitions('react-native')
+
+    test('adds the definitions called out in the dependency', () => {
+      expect(definitions[2].name).toBe('xcode')
+    })
+  })
+
 })

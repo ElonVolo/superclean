@@ -33,6 +33,7 @@
       "step_id": "run-simple-command",
       "message": "Testing running a command with multiple arguments",
       "type": "shell",
+      "status": "enabled",
       "command": {
         "name": "ls",
         "args": [
