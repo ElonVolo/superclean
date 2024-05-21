@@ -1,0 +1,34 @@
+{
+	"name": "homebrew",
+	"steps": [
+    {
+			"step_id": "clean_homebrew_run_brew_autoremove",
+			"message": "Running brew autoremove",
+			"type": "shell",
+			"command": {
+				"name": "brew",
+				"args": [
+					"autoremove"
+				]
+			}
+		},
+    {
+			"step_id": "clean_homebrew_brew_run_prune_all",
+			"message": "Running brew cleanup --prune=all",
+			"type": "shell",
+			"command": {
+				"name": "brew",
+				"args": [
+					"cleanup",
+          "--prune=all"
+				]
+			}
+		},
+		{
+			"step_id": "clean_homebrew_delete_library_caches_homebrew",
+			"message": "Deleting ~/Library/Caches/Homebrew",
+			"type": "delete",
+			"path": "~/Library/Caches/Homebrew"
+		}
+	]
+}
