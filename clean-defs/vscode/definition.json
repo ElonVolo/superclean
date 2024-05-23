@@ -69,6 +69,74 @@
       "platforms": [
 				"darwin"
 			]
+		},
+		{
+			"step_id": "windows_delete_appdata_code_cacheddata",
+			"message": "Deleting %APPDATA%\\Code\\CachedData",
+			"type": "delete",
+			"path": "%APPDATA%\\Code\\CachedData",
+			"platforms": [
+				"win32"
+			]
+		},
+    {
+			"step_id": "windows_delete_appdata_code_cachedextensions",
+			"message": "Deleting %APPDATA%\\Code\\CachedExtensions",
+			"type": "delete",
+			"path": "%APPDATA%\\Code\\CachedExtensions",
+			"platforms": [
+				"win32"
+			]
+    },
+    {
+			"step_id": "windows_run-delete-appdata-vscode-caches",
+			"message": "Delete %APPDATA%\\Code\\*cache*",
+			"type": "shell",
+			"command": {
+				"name": "rm",
+				"args": [
+          "for",
+          "/R",
+          "%APPDATA%\\Code",
+          "%%f in (*cache*) do del \"%%f\""
+				]
+			},
+      "platforms": [
+				"darwin"
+			]
+		},
+    {
+			"step_id": "linux_delete_appdata_code_cacheddata",
+			"message": "Deleting ~/.config/Code/CachedData",
+			"type": "delete",
+			"path": "~/.config/Code/CachedData",
+			"platforms": [
+				"linux"
+			]
+    },
+    {
+			"step_id": "linux_delete_appdata_code_cachedextensions",
+			"message": "Deleting ~/.config/Code/CachedExtensions",
+			"type": "delete",
+			"path": "~/.config/Code/CachedExtensions",
+			"platforms": [
+				"linux"
+			]
+		},
+		{
+			"step_id": "linux_run-delete-appdata-vscode-caches",
+			"message": "Delete ~/.config/Code/*Cache*",
+			"type": "shell",
+			"command": {
+				"name": "rm",
+				"args": [
+          "-rf",
+          "~/.config/Code/*Cache"
+				]
+			},
+      "platforms": [
+				"linux"
+			]
 		}
 	]
 }
