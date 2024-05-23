@@ -2,43 +2,61 @@
 	"name": "vscode",
 	"steps": [
 		{
-			"step_id": "delete_library-caches-microsoft-vscode",
+			"step_id": "darwin_delete_library-caches-microsoft-vscode",
 			"message": "Deleting ~/Library/Caches/com.microsoft.VSCode",
 			"type": "delete",
-			"path": "~/Library/Caches/com.microsoft.VSCode"
+			"path": "~/Library/Caches/com.microsoft.VSCode",
+      "platforms": [
+				"darwin"
+			]
 		},
 		{
-			"step_id": "delete_library-caches-microsoft-vscode-shipit",
+			"step_id": "darwin_delete_library-caches-microsoft-vscode-shipit",
 			"message": "Deleting ~/Library/Caches/com.microsoft.VSCode.ShipIt",
 			"type": "delete",
-			"path": "~/Library/Caches/com.microsoft.VSCode.ShipIt"
+			"path": "~/Library/Caches/com.microsoft.VSCode.ShipIt",
+      "platforms": [
+				"darwin"
+			]
 		},
 		{
-			"step_id": "delete_library-caches-microsoft-vscode-vscodeinsiders",
+			"step_id": "darwin_delete_library-caches-microsoft-vscode-vscodeinsiders",
 			"message": "Deleting ~/Library/Caches/com.microsoft.VSCodeInsiders",
 			"type": "delete",
-			"path": "~/Library/Caches/com.microsoft.VSCodeInsiders"
+			"path": "~/Library/Caches/com.microsoft.VSCodeInsiders",
+      "platforms": [
+				"darwin"
+			]
 		},
 		{
-			"step_id": "delete_library-caches-microsoft-vscode-vscodeinsiders-shipit",
+			"step_id": "darwin_delete_library-caches-microsoft-vscode-vscodeinsiders-shipit",
 			"message": "Deleting ~/Library/Caches/com.microsoft.VSCodeInsiders.ShipIt",
 			"type": "delete",
-			"path": "~/Library/Caches/com.microsoft.VSCodeInsiders.ShipIt"
+			"path": "~/Library/Caches/com.microsoft.VSCodeInsiders.ShipIt",
+      "platforms": [
+				"darwin"
+			]
 		},
 		{
-			"step_id": "delete_library-caches-vscode",
+			"step_id": "darwin_delete_library-caches-vscode",
 			"message": "Deleting library-caches-vscode",
 			"type": "delete",
-			"path": "~/Library/Caches/com.microsoft.VSCode"
+			"path": "~/Library/Caches/com.microsoft.VSCode",
+      "platforms": [
+				"darwin"
+			]
 		},
 		{
-			"step_id": "delete_library-caches-vscode-cpptools",
+			"step_id": "darwin_delete_library-caches-vscode-cpptools",
 			"message": "Deleting ~/Library/Caches/vscode-cpptools",
 			"type": "delete",
-			"path": "~/Library/Caches/vscode-cpptools"
+			"path": "~/Library/Caches/vscode-cpptools",
+      "platforms": [
+				"darwin"
+			]
 		},
 		{
-			"step_id": "run-delete-library-application-support-vscode-caches",
+			"step_id": "darwin_run-delete-library-application-support-vscode-caches",
 			"message": "Delete ~/Library/Application Support/Code/*cache*",
 			"type": "shell",
 			"command": {
@@ -47,7 +65,10 @@
 					"-rf",
 					"~/Library/Application\\ Support/Code/*Cache*"
 				]
-			}
+			},
+      "platforms": [
+				"darwin"
+			]
 		}
 	]
 }
