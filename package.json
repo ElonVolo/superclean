@@ -1,6 +1,6 @@
 {
   "name": "superclean",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A one-stop cleaning utility for multiple frameworks and platforms",
   "types": "build/types/types.d.ts",
   "bin": {
@@ -18,6 +18,7 @@
     "snapupdate": "jest --updateSnapshot",
     "coverage": "jest --coverage"
   },
+  "keywords": ["clean", "xcode", "android", "ios", "react native", "vscode", "node"],
   "files": [
     "build",
     "LICENSE",
